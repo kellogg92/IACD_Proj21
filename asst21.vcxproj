@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup Label="ProjectConfigurations">
+		<ProjectConfiguration Include="Debug|Win32">
+			<Configuration>Debug</Configuration>
+			<Platform>Win32</Platform>
+		</ProjectConfiguration>
+		<ProjectConfiguration Include="Release|Win32">
+			<Configuration>Release</Configuration>
+			<Platform>Win32</Platform>
+		</ProjectConfiguration>
+	</ItemGroup>
+	<PropertyGroup Label="Globals">
+		<ProjectGuid>{7FD42DF7-442E-479A-BA76-D0022F99702A}</ProjectGuid>
+		<Keyword>Win32Proj</Keyword>
+		<RootNamespace>asst21</RootNamespace>
+	</PropertyGroup>
+	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+		<ConfigurationType>Application</ConfigurationType>
+		<CharacterSet>Unicode</CharacterSet>
+		<PlatformToolset>v110</PlatformToolset>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+		<ConfigurationType>Application</ConfigurationType>
+		<CharacterSet>Unicode</CharacterSet>
+		<WholeProgramOptimization>true</WholeProgramOptimization>
+		<PlatformToolset>v110</PlatformToolset>
+	</PropertyGroup>
+	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+		<Import Project="..\..\..\libs\openFrameworksCompiled\project\vs\openFrameworksRelease.props" />
+	</ImportGroup>
+	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+		<Import Project="..\..\..\libs\openFrameworksCompiled\project\vs\openFrameworksDebug.props" />
+	</ImportGroup>
+	<PropertyGroup Label="UserMacros" />
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+		<OutDir>bin\</OutDir>
+		<IntDir>obj\$(Configuration)\</IntDir>
+		<TargetName>$(ProjectName)_debug</TargetName>
+		<LinkIncremental>true</LinkIncremental>
+		<GenerateManifest>true</GenerateManifest>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+		<OutDir>bin\</OutDir>
+		<IntDir>obj\$(Configuration)\</IntDir>
+		<LinkIncremental>false</LinkIncremental>
+	</PropertyGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+		<ClCompile>
+			<Optimization>Disabled</Optimization>
+			<MinimalRebuild>true</MinimalRebuild>
+			<BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+			<RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+			<WarningLevel>Level3</WarningLevel>
+			<DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\addons\ofxPostProcessing_ADD\libs;..\..\..\addons\ofxPostProcessing_ADD\src;..\..\..\addons\ofxVboParticles_ADD\libs;..\..\..\addons\ofxVboParticles_ADD\src</AdditionalIncludeDirectories>
+			<CompileAs>CompileAsCpp</CompileAs>
+		</ClCompile>
+		<Link>
+			<GenerateDebugInformation>true</GenerateDebugInformation>
+			<SubSystem>Console</SubSystem>
+			<RandomizedBaseAddress>false</RandomizedBaseAddress>
+			<AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+			<AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+		</Link>
+	</ItemDefinitionGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+		<ClCompile>
+			<WholeProgramOptimization>false</WholeProgramOptimization>
+			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+			<RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+			<WarningLevel>Level3</WarningLevel>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\addons\ofxPostProcessing_ADD\libs;..\..\..\addons\ofxPostProcessing_ADD\src;..\..\..\addons\ofxVboParticles_ADD\libs;..\..\..\addons\ofxVboParticles_ADD\src</AdditionalIncludeDirectories>
+			<CompileAs>CompileAsCpp</CompileAs>
+		</ClCompile>
+		<Link>
+			<IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+			<GenerateDebugInformation>false</GenerateDebugInformation>
+			<SubSystem>Console</SubSystem>
+			<OptimizeReferences>true</OptimizeReferences>
+			<EnableCOMDATFolding>true</EnableCOMDATFolding>
+			<RandomizedBaseAddress>false</RandomizedBaseAddress>
+			<AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+			<AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+		</Link>
+	</ItemDefinitionGroup>
+	<ItemGroup>
+		<ClCompile Include="src\main.cpp" />
+		<ClCompile Include="src\ofApp.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxPostProcessing_ADD\src\BleachBypassPass.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxPostProcessing_ADD\src\BloomPass.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxPostProcessing_ADD\src\ContrastPass.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxPostProcessing_ADD\src\ConvolutionPass.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxPostProcessing_ADD\src\DofAltPass.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxPostProcessing_ADD\src\DofPass.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxPostProcessing_ADD\src\EdgePass.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxPostProcessing_ADD\src\FakeSSSPass.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxPostProcessing_ADD\src\FxaaPass.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxPostProcessing_ADD\src\GodRaysPass.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxPostProcessing_ADD\src\HorizontalTiltShifPass.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxPostProcessing_ADD\src\KaleidoscopePass.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxPostProcessing_ADD\src\LimbDarkeningPass.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxPostProcessing_ADD\src\LUTPass.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxPostProcessing_ADD\src\NoiseWarpPass.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxPostProcessing_ADD\src\PixelatePass.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxPostProcessing_ADD\src\PostProcessing.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxPostProcessing_ADD\src\RenderPass.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxPostProcessing_ADD\src\RGBShiftPass.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxPostProcessing_ADD\src\RimHighlightingPass.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxPostProcessing_ADD\src\SSAOPass.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxPostProcessing_ADD\src\ToonPass.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxPostProcessing_ADD\src\VerticalTiltShifPass.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxPostProcessing_ADD\src\ZoomBlurPass.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxVboParticles_ADD\src\ofxVboParticles.cpp" />
+	</ItemGroup>
+	<ItemGroup>
+		<ClInclude Include="src\ofApp.h" />
+		<ClInclude Include="..\..\..\addons\ofxPostProcessing_ADD\src\BleachBypassPass.h" />
+		<ClInclude Include="..\..\..\addons\ofxPostProcessing_ADD\src\BloomPass.h" />
+		<ClInclude Include="..\..\..\addons\ofxPostProcessing_ADD\src\ContrastPass.h" />
+		<ClInclude Include="..\..\..\addons\ofxPostProcessing_ADD\src\ConvolutionPass.h" />
+		<ClInclude Include="..\..\..\addons\ofxPostProcessing_ADD\src\DofAltPass.h" />
+		<ClInclude Include="..\..\..\addons\ofxPostProcessing_ADD\src\DofPass.h" />
+		<ClInclude Include="..\..\..\addons\ofxPostProcessing_ADD\src\EdgePass.h" />
+		<ClInclude Include="..\..\..\addons\ofxPostProcessing_ADD\src\FakeSSSPass.h" />
+		<ClInclude Include="..\..\..\addons\ofxPostProcessing_ADD\src\FxaaPass.h" />
+		<ClInclude Include="..\..\..\addons\ofxPostProcessing_ADD\src\GodRaysPass.h" />
+		<ClInclude Include="..\..\..\addons\ofxPostProcessing_ADD\src\HorizontalTiltShifPass.h" />
+		<ClInclude Include="..\..\..\addons\ofxPostProcessing_ADD\src\KaleidoscopePass.h" />
+		<ClInclude Include="..\..\..\addons\ofxPostProcessing_ADD\src\LimbDarkeningPass.h" />
+		<ClInclude Include="..\..\..\addons\ofxPostProcessing_ADD\src\LUTPass.h" />
+		<ClInclude Include="..\..\..\addons\ofxPostProcessing_ADD\src\NoiseWarpPass.h" />
+		<ClInclude Include="..\..\..\addons\ofxPostProcessing_ADD\src\ofxPostProcessing.h" />
+		<ClInclude Include="..\..\..\addons\ofxPostProcessing_ADD\src\PixelatePass.h" />
+		<ClInclude Include="..\..\..\addons\ofxPostProcessing_ADD\src\PostProcessing.h" />
+		<ClInclude Include="..\..\..\addons\ofxPostProcessing_ADD\src\RenderPass.h" />
+		<ClInclude Include="..\..\..\addons\ofxPostProcessing_ADD\src\RGBShiftPass.h" />
+		<ClInclude Include="..\..\..\addons\ofxPostProcessing_ADD\src\RimHighlightingPass.h" />
+		<ClInclude Include="..\..\..\addons\ofxPostProcessing_ADD\src\SSAOPass.h" />
+		<ClInclude Include="..\..\..\addons\ofxPostProcessing_ADD\src\ToonPass.h" />
+		<ClInclude Include="..\..\..\addons\ofxPostProcessing_ADD\src\VerticalTiltShifPass.h" />
+		<ClInclude Include="..\..\..\addons\ofxPostProcessing_ADD\src\ZoomBlurPass.h" />
+		<ClInclude Include="..\..\..\addons\ofxVboParticles_ADD\src\ofxVboParticles.h" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">
+			<Project>{5837595d-aca9-485c-8e76-729040ce4b0b}</Project>
+		</ProjectReference>
+	</ItemGroup>
+	<ItemGroup>
+		<ResourceCompile Include="icon.rc">
+			<AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">/D_DEBUG %(AdditionalOptions)</AdditionalOptions>
+		</ResourceCompile>
+	</ItemGroup>
+	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>
